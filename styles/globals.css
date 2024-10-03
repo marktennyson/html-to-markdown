@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --font-nunito: 'Nunito', sans-serif;
   --background: #ffffff;
   --foreground: #171717;
 }

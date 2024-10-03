@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/font": "^14.2.14",
     "@nextui-org/react": "^2.4.8",
     "@types/turndown": "^5.0.5",
     "framer-motion": "^11.8.0",
@@ -16,7 +17,8 @@
     "next-themes": "^0.3.0",
     "react": "^18",
     "react-dom": "^18",
-    "turndown": "^7.2.0"
+    "turndown": "^7.2.0",
+    "use-media": "^1.5.0"
   },
   "devDependencies": {
     "@types/node": "^20",

@@ -14,6 +14,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      screens: {
+        mobile: { min: "320px", max: "639px" },
+      },
+      fontFamily: {
+        aguafina: ['var(--font-aguafina)', 'cursive'], 
+        nunito: ['var(--font-nunito)', 'sans-serif'], 
+      }
     },
   },
   darkMode: "class",
