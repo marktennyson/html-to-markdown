@@ -1,40 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## HTML → Markdown Studio
 
-## Getting Started
+Hyper-modern HTML-to-Markdown playground built on the Next.js App Router. The experience ships with animated glassmorphism UI, responsive layouts tailored from small mobile screens to 4K desktops, and instant clipboard-ready Markdown output.
 
-First, run the development server:
+### Stack
+
+- **Next.js 15 App Router** with the latest React 19 features
+- **TypeScript** and Tailwind CSS (v3.4) with custom tokens for light/dark theming
+- **Framer Motion 12** for immersive micro-interactions
+- **Turndown** for deterministic HTML → Markdown transforms
+- **Lucide icons** and custom font pairing (Geist + Nunito)
+
+### Getting started
 
 ```bash
-npm run dev
-# or
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) to explore the studio. The primary workspace lives in `app/page.tsx` and uses the `app/providers.tsx` wrapper for theme management.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Production build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+yarn build
+yarn start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Features at a glance
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Dual-pane editor with live Markdown preview, conversion guardrails, and copy toast
+- Adaptive layout with 3XL/4XL breakpoints and glassy gradients for retina screens
+- Motion-enhanced hero, feature grid, and automation timeline with staggered reveals
+- Theme toggle powered by `next-themes` and persistent design tokens
+- API example using App Router route handlers under `app/api`
 
-## Learn More
+### Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+	layout.tsx        # Root layout + fonts and global glass background
+	page.tsx          # Animated workspace, feature highlights, CTA
+	providers.tsx     # Client-side providers (theme)
+	api/hello/        # Route handler example
+	fonts/            # Local Geist font files
+components/
+	ThemeToggle.tsx   # Rich icon theme switcher
+styles/globals.css  # Tailwind base + design tokens
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feel free to fork, extend the conversion rules, or swap in your own preset tokens. Run `yarn lint` to ensure the codebase stays compliant with the configured rules.

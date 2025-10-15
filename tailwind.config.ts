@@ -1,29 +1,40 @@
 import type { Config } from "tailwindcss";
-import { nextui } from "@nextui-org/react";
 
 const config: Config = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        card: "var(--card)",
+        "card-foreground": "var(--card-foreground)",
+        accent: "var(--accent)",
+        "accent-foreground": "var(--accent-foreground)",
+        muted: "var(--muted)",
+        "muted-foreground": "var(--muted-foreground)",
       },
       screens: {
         mobile: { min: "320px", max: "639px" },
+        "3xl": "1920px",
+        "4xl": "2560px",
       },
       fontFamily: {
-        aguafina: ['var(--font-aguafina)', 'cursive'], 
-        nunito: ['var(--font-nunito)', 'sans-serif'], 
-      }
+        nunito: ["var(--font-nunito)", "sans-serif"],
+        geist: ["var(--font-geist-sans)", "system-ui"],
+        grotesk: ["var(--font-space-grotesk)", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
+      },
+      boxShadow: {
+        neon: "0 0 30px rgba(56, 189, 248, 0.35)",
+        glow: "0 0 45px rgba(236, 72, 153, 0.25)",
+      },
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [],
 };
 export default config;
